@@ -3,13 +3,13 @@
  * - a set of CharCell
  *
  * @version 1.00 
- * @author Michael Kalinin
+ * @author Michael Kalinin, Alykoff Gali
  */ 
 
 import java.awt.*;
 import java.awt.font.*;
  
- public class Word {
+ public class Word implements Cloneable {
  
     private CharCell [] cells;
     private int orientation;
@@ -32,7 +32,7 @@ import java.awt.font.*;
     /**
      * Сoздает новый список, копируя существующий
      */
-    public Word( Word word ) {
+    private Word(Word word) {
         
         this.orientation = word.orientation();    
         this.wordCoord = word.coord();
@@ -79,5 +79,9 @@ import java.awt.font.*;
     public int length () { return length; }        
     public int first () { return cells[0].coord(); }
     public int last () { return cells[length-1].coord(); }
+    
+    public Word clone() {
+    	return new Word(this);
+    }
     
  }

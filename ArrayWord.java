@@ -2,11 +2,12 @@
  * ArrayWord
  *
  * @version 1.00 
- * @author Michael Kalinin
+ * @author Michael Kalinin, Alykoff Gali
  */
 
 import java.util.*;
 
+@SuppressWarnings("serial")
 public class ArrayWord<E> extends ArrayList<E> {
 
     private int minCoordX = 0;
